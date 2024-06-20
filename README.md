@@ -1,2 +1,2 @@
 # projects.js
-Repository for deploying basic projects I made while learning JavaScript 
+Repository for deploying projects I made while learning JavaScript #buildwhilelearning
