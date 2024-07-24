@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyboard</title>
+</head>
+
+<body style="background-color: grey;">
+    <h2>press any key to print its name</h2>
+    <div id="div">
+        <div id="insert"></div>
+    </div>
+</body>
+<script>
+    const insert = document.getElementById("insert")
+    window.addEventListener('keydown', function (e) {
+        insert.innerHTML = `Pressed Key Is [ ${e.key} ] & KeyCode is ${e.keyCode}`
+
+    })
+</script>
+
+</html>

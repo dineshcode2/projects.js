@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimited Background Colors</title>
+</head>
+
+<body>
+    <h1>Click to Start/Stop Unlimited Background Colors</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //variables
+    const start = document.querySelector('#start')
+    const stop = document.querySelector('#stop')
+    let interval;
+
+    //function to create randomcolors
+    const randomColors = function () {
+        const hex = '012345678ABCDEF'
+        let color = '#'
+        for (let i = 0; i < 6; i++) {
+            color += hex[Math.floor(Math.random() * 16)]
+        }
+        return color;
+    }
+
+    //function to set-interval and change color
+    const startChangingColor = function () {
+        if (!interval) {
+            interval = setInterval(changeBgColor, 200)
+        }
+
+        function changeBgColor() {
+            document.body.style.backgroundColor = randomColors();
+        }
+    }
+
+    //function to clear-interval
+    const stopChangingColor = function () {
+        clearInterval(interval)
+        interval = null;
+    }
+
+    //adding click event on buttons
+    start.addEventListener('click', startChangingColor)
+    stop.addEventListener('click', stopChangingColor)
+</script>
+
+</html>

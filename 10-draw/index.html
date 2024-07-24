@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Try To Draw First Letter Of Your Name
+        <br> *you will get 7 dot attempts
+    </h2>
+    <script>
+        const body = document.querySelector('body')
+
+        document.addEventListener('click', function (event) {
+            const mse = { mouseX: event.pageX, mouseY: event.pageY }
+            console.log(mse.mouseX);//horizontal line
+            console.log(mse.mouseY);//vertical line
+            console.log(event);
+
+            const dot = document.createElement('div')
+            dot.style.width = '20px'
+            dot.style.height = '20px'
+            dot.style.backgroundColor = 'black'
+            dot.style.borderRadius = '50%'
+            dot.style.position = 'absolute'
+            dot.style.left = mse.mouseX + 'px'
+            dot.style.top = mse.mouseY + 'px'
+            console.log(dot);
+            console.log(body);
+            body.appendChild(dot)
+
+            let divCount = document.querySelectorAll('div').length;
+            console.log('Number of div elements:', divCount);
+            console.log(body.childNodes);
+
+            if (divCount > 7) {
+                alert('You Failed')
+                body.innerHTML = `<h2>Try To Draw First Letter Of Your Name
+                    <br> *you will get 7 dot attempts</h2>`
+
+
+            }
+        })
+    </script>
+</body>
+
+</html>
